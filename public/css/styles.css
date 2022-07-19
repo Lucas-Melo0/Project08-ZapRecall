@@ -2,10 +2,10 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Recursive:wght@300;400;500;600;700&display=swap');
 *{box-sizing: border-box;}
+*{text-decoration: none;}
 body {
     background-color: #FB6B6B; 
     font-family: 'Recursive', sans-serif;
-
 }
 header {
     margin-top: 40px;

@@ -81,7 +81,7 @@ footer {
     overflow-y:auto;
 }
 
-.zapCard {
+.zapCard{
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -100,4 +100,17 @@ footer {
 .zapCard ion-icon {
     font-size: 25px;
     margin-right: 10px;
+}
+.zapContainer{
+    all:inherit
+}
+.hidden {
+    display: none;
+}
+.zapClicked{
+    width: 299px;
+    height: 131px;
+    background: #FFFFD5;
+    box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
 }

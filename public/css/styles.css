@@ -35,6 +35,9 @@ footer {
     position: fixed;
     bottom: 0;
 }
+button {
+    all:unset;
+}
 
 
 .homePage{
@@ -58,7 +61,6 @@ footer {
     font-family: 'Righteous', cursive;
 }
 .homePage button {
-    all: unset;
     margin-bottom: 40px;
     width: 246px;
     height: 54px;
@@ -71,12 +73,13 @@ footer {
 }
 
 .zaps{
-    height: 70vh;
+    margin-bottom: 75px;
+    min-height: 70vh;
     margin-top: 15px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-content: space-around;
     overflow-y:auto;
 }
@@ -108,9 +111,41 @@ footer {
     display: none;
 }
 .zapClicked{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     width: 299px;
     height: 131px;
     background: #FFFFD5;
     box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.15);
     border-radius: 5px;
+}
+.zapClicked img{
+    margin-left: 250px;
+    width: 30px;
+    height: 20px;
+}
+.options {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.wrong , .halfCorrect, .correct {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    text-align: center;
+    width: 85.17px;
+    height: 37.17px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+.wrong {
+    background-color: #FF3030;
+}
+.halfCorrect {
+    background-color: #FF922E;
+}
+.correct {
+    background-color: #2FBE34;
 }

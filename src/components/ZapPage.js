@@ -1,4 +1,5 @@
 import ZapCard from "./ZapCard"
+import reactDeck from "../data"
 export default function ZapPage() {
     return (
         <div className="zapPage">
@@ -7,11 +8,15 @@ export default function ZapPage() {
                 <h1>ZapRecall</h1>
             </header>
             <div className="zaps">
-                <ZapCard />
-                <ZapCard />
+                {reactDeck.map((value => 
+                <ZapCard cardNumber ={value.cardNumber}
+                cardQuestion = {value.question}
+                cardAnswer ={value.answer}/>)
+                )}
+                
             </div>
             <footer>
-                <p>0/4 Concluidos</p>
+                <p>0/{reactDeck.length} Concluidos</p>
             </footer>
         </div>
     )

@@ -1,31 +1,40 @@
 import React from "react";
-import reactDeck from "../data";
-export default function ZapCard() {
+export default function ZapCard({ cardNumber, cardQuestion, cardAnswer }) {
 
+    const [isClicked, setIsClicked] = React.useState(false);
     const [isOpen, setIsOpen] = React.useState(false);
-    const [zapClass, setZapClass] = React.useState("zapCard")
+    const [isTurned, setIsTurned] = React.useState(false);
+    
 
-
-    function openZap() {
-
-        setZapClass("hidden")
-        setIsOpen(true)
-
-    }
 
     return (
         <>
-            <div onClick={openZap} className={zapClass}>
-                <div className="zapContainer">
-                    <p>Pergunta 1</p>
-                    <ion-icon name="play-outline"></ion-icon>
-                </div>
-            </div>
-            {isOpen && <div className="zapClicked">
-                    <p>O que é JSX?</p>
-                    <img src="./assets/setinha.png" alt=" turnaround arrow" />
+            {
+                isClicked ? null
+                    : <div onClick={() => {setIsOpen(true); setIsClicked(true)}} className="zapCard">
+                        <div className="zapContainer">
+                            <p>Pergunta {cardNumber} </p>
+                            <ion-icon name="play-outline"></ion-icon>
+                        </div>
+                    </div>
+            }
+            {
+                isOpen ? <div className="zapClicked">
+                    <p>{cardQuestion}</p>
+                    <img onClick={() => {setIsTurned(true);setIsOpen(false)}} src="./assets/setinha.png" alt=" turnaround arrow" />
+                </div> : null
+            }
+            {
+                isTurned ? <div className="zapClicked">
+                    <p>{cardAnswer}</p>
+                    <div className="options">
+                        <button className="wrong">Não lembrei</button>
+                        <button className="halfCorrect">Quase não lembrei</button>
+                        <button className="correct">Zap!</button>
+                    </div>
+                </div> : null
+            }
 
-                </div>}
         </>
 
 

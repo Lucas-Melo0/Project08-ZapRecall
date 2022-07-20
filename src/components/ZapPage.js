@@ -14,7 +14,6 @@ export default function ZapPage() {
     }
     function correctAnswerIcon(){
         setAnwsersIcon(initialArray => [...initialArray,"checkmark-circle"])
-        
     }
 
 
@@ -25,13 +24,13 @@ export default function ZapPage() {
                 <h1>ZapRecall</h1>
             </header>
             <div className="zaps">
-                {reactDeck.map((value => 
+                {reactDeck.map((value,index) => 
                 <ZapCard  countAnswers ={countAnswers} 
-                cardNumber ={value.cardNumber}
+                cardNumber ={index + 1}
                 cardQuestion = {value.question}
                 cardAnswer ={value.answer}
                 correctAnswerIcon={correctAnswerIcon}/>)
-                )}
+                }
                 
             </div>
           <Footer answersIcon ={answersIcon} answers = {answers}/>

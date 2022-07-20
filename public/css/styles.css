@@ -38,6 +38,9 @@ footer {
 button {
     all:unset;
 }
+ion-icon{
+    visibility: visible;
+}
 
 
 .homePage{
@@ -94,6 +97,19 @@ button {
     box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.15);
     border-radius: 5px;
 }
+.zapCard.wrongAnswer{
+    text-decoration: line-through;
+    color: #D70900;
+}
+
+.zapCard.halfCorrectAnswer{
+    text-decoration: line-through;
+    color: #FF922E;
+}
+.zapCard.correctAnswer{
+    text-decoration: line-through;
+    color: #2FBE34;
+}
 .zapCard p {
     font-style: normal;
     font-weight: 700;
@@ -139,6 +155,9 @@ button {
     height: 37.17px;
     border-radius: 5px;
     margin-bottom: 5px;
+}
+.correctAnswer{
+    color:#2FBE34
 }
 .wrong {
     background-color: #FF3030;

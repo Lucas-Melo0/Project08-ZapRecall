@@ -1,6 +1,23 @@
 import ZapCard from "./ZapCard"
-import reactDeck from "../data"
+import Footer from "./Footer";
+import reactDeck from "../data";
+import React from "react";
 export default function ZapPage() {
+    const initialArray = []
+    const [answers, setAnwsers] = React.useState(0);
+    const [answersIcon, setAnwsersIcon] = React.useState(initialArray);
+    
+
+
+    function countAnswers(){
+        setAnwsers(answers + 1 )
+    }
+    function correctAnswerIcon(){
+        setAnwsersIcon(initialArray => [...initialArray,"checkmark-circle"])
+        
+    }
+
+
     return (
         <div className="zapPage">
             <header>
@@ -9,15 +26,15 @@ export default function ZapPage() {
             </header>
             <div className="zaps">
                 {reactDeck.map((value => 
-                <ZapCard cardNumber ={value.cardNumber}
+                <ZapCard  countAnswers ={countAnswers} 
+                cardNumber ={value.cardNumber}
                 cardQuestion = {value.question}
-                cardAnswer ={value.answer}/>)
+                cardAnswer ={value.answer}
+                correctAnswerIcon={correctAnswerIcon}/>)
                 )}
                 
             </div>
-            <footer>
-                <p>0/{reactDeck.length} Concluidos</p>
-            </footer>
+          <Footer answersIcon ={answersIcon} answers = {answers}/>
         </div>
     )
 }

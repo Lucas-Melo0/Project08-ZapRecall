@@ -1,5 +1,5 @@
 import React from "react";
-export default function ZapCard({ cardNumber, cardQuestion, cardAnswer, countAnswers, correctAnswerIcon, incorrectAnswerIcon, halfCorrectAnswerIcon}) {
+export default function ZapCard({ cardNumber, cardQuestion, cardAnswer, countAnswers, footerCorrectAnswerIcon, footerIncorrectAnswerIcon, footerHalfCorrectAnswerIcon}) {
 
     const [isClicked, setIsClicked] = React.useState(false);
     const [isOpen, setIsOpen] = React.useState(false);
@@ -17,7 +17,7 @@ export default function ZapCard({ cardNumber, cardQuestion, cardAnswer, countAns
         setZapClass("zapCard wrongAnswer");
         setZapIcon("close-circle");
         countAnswers();
-        incorrectAnswerIcon();
+        footerIncorrectAnswerIcon();
          
     }
     function halfCorrectAnswer(){
@@ -25,7 +25,7 @@ export default function ZapCard({ cardNumber, cardQuestion, cardAnswer, countAns
         setZapClass("zapCard halfCorrectAnswer");
         setZapIcon("help-circle");
         countAnswers();
-        halfCorrectAnswerIcon();
+        footerHalfCorrectAnswerIcon();
     
     }
     function correctAnswer(){
@@ -33,7 +33,7 @@ export default function ZapCard({ cardNumber, cardQuestion, cardAnswer, countAns
         setZapClass("zapCard correctAnswer");
         setZapIcon("checkmark-circle");
         countAnswers();
-        correctAnswerIcon();
+        footerCorrectAnswerIcon();
 
     }
 
@@ -51,7 +51,7 @@ export default function ZapCard({ cardNumber, cardQuestion, cardAnswer, countAns
             {
                 isOpen ? <div className="zapClicked">
                     <p>{cardQuestion}</p>
-                    <img onClick={() => {setIsTurned(true);setIsOpen(false)}} src="./assets/setinha.png" alt=" turnaround arrow" />
+                    <img onClick={() => {setIsTurned(true);setIsOpen(false)}} src="./assets/Vector.png" alt=" turnaround arrow" />
                 </div> : null
             }
             {

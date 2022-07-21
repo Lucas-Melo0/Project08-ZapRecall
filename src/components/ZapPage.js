@@ -10,13 +10,13 @@ export default function ZapPage() {
     function countAnswers(){
         setAnwsers(answers + 1 )
     }
-    function correctAnswerIcon(){
+    function footerCorrectAnswerIcon(){
         setAnwsersIcon([...answersIcon,{iconClass:"correctAnswer", iconName:"checkmark-circle"}]) 
     }
-    function incorrectAnswerIcon(){
+    function footerIncorrectAnswerIcon(){
         setAnwsersIcon([...answersIcon,{iconClass:"incorrectAnswer", iconName:"close-circle"}])  
     }
-    function halfCorrectAnswerIcon(){
+    function footerHalfCorrectAnswerIcon(){
         setAnwsersIcon([...answersIcon,{iconClass:"halfCorrectAnswer", iconName:"help-circle"}]) 
     }
 
@@ -32,9 +32,9 @@ export default function ZapPage() {
                 cardNumber ={index + 1}
                 cardQuestion = {value.question}
                 cardAnswer ={value.answer}
-                correctAnswerIcon={correctAnswerIcon}
-                incorrectAnswerIcon={incorrectAnswerIcon}
-                halfCorrectAnswerIcon={halfCorrectAnswerIcon}/>)
+                footerCorrectAnswerIcon={footerCorrectAnswerIcon}
+                footerIncorrectAnswerIcon={footerIncorrectAnswerIcon}
+                footerHalfCorrectAnswerIcon={footerHalfCorrectAnswerIcon}/>)
                 }
                 
             </div>

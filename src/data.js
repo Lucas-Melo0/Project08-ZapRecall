@@ -1,4 +1,3 @@
-
 const reactDeck = [
     {question: "O que é JSX?", answer: "Uma extensão de linguagem do JavaScript"},
     {question: "O React é", answer: "uma biblioteca JavaScript para construção de interfaces"},

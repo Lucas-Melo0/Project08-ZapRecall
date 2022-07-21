@@ -142,6 +142,10 @@ ion-icon{
     width: 30px;
     height: 20px;
 }
+.zapClicked p {
+    margin-top: 5px;
+    margin-left: 5px;
+}
 .options {
     display: flex;
     align-items: center;
@@ -189,4 +193,16 @@ ion-icon{
     text-align: center;
     margin-left: 5px;
     font-weight: 700;
+}
+.restartRecall{
+    margin-bottom: 10px;
+    color: #FFFFFF;
+    text-align: center;
+    width: 167px;
+    height: 32px;
+    background: #FB6B6B;
+    border-radius: 5px;
+}
+.footerIcons{
+    font-size: 25px;
 }

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import reactDeck from "../data"
 
 export default function Footer({ answers, answersIcon }) {
@@ -33,9 +34,16 @@ export default function Footer({ answers, answersIcon }) {
                 </div> : null
             }
             <p>{answers}/{reactDeck.length} Concluidos</p>
-            <div>
+            <div className="footerIcons">
                 {answersIcon.map(value => <ion-icon class={value.iconClass} name={value.iconName}></ion-icon>)}
             </div>
+            {
+                answersIcon.length === 8 ? <Link to="/">
+                <button className="restartRecall">REINICIAR RECALL</button>
+            </Link> : null
+            }
+            
+
         </footer>
     )
 }

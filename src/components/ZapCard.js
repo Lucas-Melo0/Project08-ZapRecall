@@ -1,5 +1,5 @@
 import React from "react";
-export default function ZapCard({ cardNumber, cardQuestion, cardAnswer, countAnswers, correctAnswerIcon}) {
+export default function ZapCard({ cardNumber, cardQuestion, cardAnswer, countAnswers, correctAnswerIcon, incorrectAnswerIcon, halfCorrectAnswerIcon}) {
 
     const [isClicked, setIsClicked] = React.useState(false);
     const [isOpen, setIsOpen] = React.useState(false);
@@ -9,29 +9,31 @@ export default function ZapCard({ cardNumber, cardQuestion, cardAnswer, countAns
     
 
     function showAnswerResult(){
-        setIsClicked(false)
-        setIsTurned(false)
+        setIsClicked(false);
+        setIsTurned(false);
     }
     function wrongAnswer(){
-        showAnswerResult()
-        setZapClass("zapCard wrongAnswer")
-        setZapIcon("close-circle")
-        countAnswers()
+        showAnswerResult();
+        setZapClass("zapCard wrongAnswer");
+        setZapIcon("close-circle");
+        countAnswers();
+        incorrectAnswerIcon();
          
     }
     function halfCorrectAnswer(){
-        showAnswerResult()
-        setZapClass("zapCard halfCorrectAnswer")
-        setZapIcon("help-circle")
-        countAnswers()
+        showAnswerResult();
+        setZapClass("zapCard halfCorrectAnswer");
+        setZapIcon("help-circle");
+        countAnswers();
+        halfCorrectAnswerIcon();
     
     }
     function correctAnswer(){
-        showAnswerResult()
-        setZapClass("zapCard correctAnswer")
-        setZapIcon("checkmark-circle")
-        countAnswers()  
-        correctAnswerIcon()
+        showAnswerResult();
+        setZapClass("zapCard correctAnswer");
+        setZapIcon("checkmark-circle");
+        countAnswers();
+        correctAnswerIcon();
 
     }
 

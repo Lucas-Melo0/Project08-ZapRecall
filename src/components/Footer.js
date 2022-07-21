@@ -1,12 +1,41 @@
 import reactDeck from "../data"
 
 export default function Footer({ answers, answersIcon }) {
+
+    const wrongAnswersNumber = answersIcon.filter(value => value.iconClass === "incorrectAnswer")
+    function isThereWrongAnswers() {
+        if (wrongAnswersNumber.length > 0 && answersIcon.length === 8) {
+            return true;
+        }
+    }
+    function isZeroWrongAnswers() {
+        if (wrongAnswersNumber.length === 0 && answersIcon.length === 8) {
+            return true;
+        }
+    }
+
     return (
         <footer>
+            {
+                isThereWrongAnswers() ? <div className="finalResult">
+                    <div className="resultMessage">
+                        <img src="./assets/sad.png" alt="sad emoticon" /> <p>Putz...</p>
+                    </div>
+                    <p>Ainda faltam alguns...Mas não desanime!</p>
+                </div> : null
+            }
+            {
+                isZeroWrongAnswers() ? <div className="finalResult">
+                    <div className="resultMessage">
+                        <img src="./assets/party.png" alt="congratulations emoticon" /> <p>Parabéns!</p>
+                    </div>
+                    <p>Você não esqueceu de nenhum flashcard!</p>
+                </div> : null
+            }
             <p>{answers}/{reactDeck.length} Concluidos</p>
-            {answersIcon.map(value => <ion-icon class="correctAnswer" name={value}></ion-icon>)}
-            
-
+            <div>
+                {answersIcon.map(value => <ion-icon class={value.iconClass} name={value.iconName}></ion-icon>)}
+            </div>
         </footer>
     )
 }

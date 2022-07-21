@@ -3,19 +3,22 @@ import Footer from "./Footer";
 import reactDeck from "../data";
 import React from "react";
 export default function ZapPage() {
-    const initialArray = []
-    const [answers, setAnwsers] = React.useState(0);
-    const [answersIcon, setAnwsersIcon] = React.useState(initialArray);
     
-
+    const [answers, setAnwsers] = React.useState(0);
+    const [answersIcon, setAnwsersIcon] = React.useState([]);
 
     function countAnswers(){
         setAnwsers(answers + 1 )
     }
     function correctAnswerIcon(){
-        setAnwsersIcon(initialArray => [...initialArray,"checkmark-circle"])
+        setAnwsersIcon([...answersIcon,{iconClass:"correctAnswer", iconName:"checkmark-circle"}]) 
     }
-
+    function incorrectAnswerIcon(){
+        setAnwsersIcon([...answersIcon,{iconClass:"incorrectAnswer", iconName:"close-circle"}])  
+    }
+    function halfCorrectAnswerIcon(){
+        setAnwsersIcon([...answersIcon,{iconClass:"halfCorrectAnswer", iconName:"help-circle"}]) 
+    }
 
     return (
         <div className="zapPage">
@@ -29,7 +32,9 @@ export default function ZapPage() {
                 cardNumber ={index + 1}
                 cardQuestion = {value.question}
                 cardAnswer ={value.answer}
-                correctAnswerIcon={correctAnswerIcon}/>)
+                correctAnswerIcon={correctAnswerIcon}
+                incorrectAnswerIcon={incorrectAnswerIcon}
+                halfCorrectAnswerIcon={halfCorrectAnswerIcon}/>)
                 }
                 
             </div>

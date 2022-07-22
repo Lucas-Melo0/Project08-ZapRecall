@@ -8,16 +8,16 @@ export default function ZapPage({numberOfZaps}){
     const [answersIcon, setAnwsersIcon] = React.useState([]);
 
     function countAnswers(){
-        setAnwsers(answers + 1 )
+        setAnwsers(answers + 1);
     }
     function footerCorrectAnswerIcon(){
-        setAnwsersIcon([...answersIcon,{iconClass:"correctAnswer", iconName:"checkmark-circle"}]) 
+        setAnwsersIcon([...answersIcon,{iconClass:"correctAnswer", iconName:"checkmark-circle"}]);
     }
     function footerIncorrectAnswerIcon(){
-        setAnwsersIcon([...answersIcon,{iconClass:"incorrectAnswer", iconName:"close-circle"}])  
+        setAnwsersIcon([...answersIcon,{iconClass:"incorrectAnswer", iconName:"close-circle"}]); 
     }
     function footerHalfCorrectAnswerIcon(){
-        setAnwsersIcon([...answersIcon,{iconClass:"halfCorrectAnswer", iconName:"help-circle"}]) 
+        setAnwsersIcon([...answersIcon,{iconClass:"halfCorrectAnswer", iconName:"help-circle"}]); 
     }
 
     return (

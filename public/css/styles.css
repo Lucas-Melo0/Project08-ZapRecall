@@ -184,10 +184,11 @@ input {
     background-color: #2FBE34;
 }
 .finalResult{
-    height: 150px;
+    margin-bottom: 20px;
+    height: 100px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
 }
 .resultMessage{
@@ -211,9 +212,14 @@ input {
     font-size: 25px;
 }
 .dropdown {
+    margin-bottom: 20px;
     color: #ADADAD;
     background: #FFFFFF;
     border-radius: 5px;
     width: 246px;
     height: 43px;
+}
+.container {
+    display: flex;
+    flex-direction: column;
 }

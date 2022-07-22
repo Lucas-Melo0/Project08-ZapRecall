@@ -15,6 +15,10 @@ export default function Footer({ answers, answersIcon, numberOfZaps}) {
             return true;
         }
     }
+    function amountOfZaps(){
+        let correctZaps = answersIcon.filter(v => v.iconClass === "correctAnswer");
+        return correctZaps.length
+    }
 
     return (
         <footer>
@@ -24,7 +28,7 @@ export default function Footer({ answers, answersIcon, numberOfZaps}) {
                         <img src="./assets/sad.png" alt="sad emoticon" /> <p>Putz...</p>
                     </div>
                     <p>Ainda faltam alguns...Mas não desanime!</p>
-                    <p>sua meta foi  {numberOfZaps} </p>
+                    <p>Meta {amountOfZaps()}/{numberOfZaps} </p>
                 </div> : null
             }
             {
@@ -33,6 +37,7 @@ export default function Footer({ answers, answersIcon, numberOfZaps}) {
                         <img src="./assets/party.png" alt="congratulations emoticon" /> <p>Parabéns!</p>
                     </div>
                     <p>Você não esqueceu de nenhum flashcard!</p>
+                    <p>Meta {amountOfZaps()}/{numberOfZaps} </p>
                 </div> : null
             }
             <p>{answers}/{reactDeck.length} Concluidos</p>

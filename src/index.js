@@ -1,12 +1,7 @@
-import ReactDom from "react-dom";
-import ZapPage from "./components/ZapPage";
-import HomePage from "./components/HomePage";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import ReactDom from "react-dom/client";
+import React from "react"
+import App from "./App";
 
 
-ReactDom.render(<Router>
-    <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/ZapPage" element={<ZapPage />} />
-    </Routes>
-</Router>,document.querySelector(".root"))
+const root = ReactDom.createRoot(document.querySelector(".root"))
+root.render(<App />)

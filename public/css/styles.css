@@ -43,6 +43,10 @@ ion-icon{
     visibility: visible;
 }
 
+input {
+    all:unset
+}
+
 
 .homePage{
     margin-top: 100px;
@@ -205,4 +209,11 @@ ion-icon{
 }
 .footerIcons{
     font-size: 25px;
+}
+.dropdown {
+    color: #ADADAD;
+    background: #FFFFFF;
+    border-radius: 5px;
+    width: 246px;
+    height: 43px;
 }

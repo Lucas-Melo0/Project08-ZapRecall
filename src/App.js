@@ -1,17 +1,25 @@
 import HomePage from "./components/HomePage";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import ZapPage from "./components/ZapPage";
-export default function App() {
-    return (
+import React from "react"
 
-        <Router>
-            <Routes>
-                <Route path="/" element={<HomePage />} />
-                <Route path="/ZapPage" element={<ZapPage />} />
-            </Routes>
-        </Router>
+
+export default function App() {
+
+
+    const [numberOfZaps, setNumberOfZaps] = React.useState("Digite uma meta de zaps")
+
+    
+    return (
+        <>
+            <HomePage  numberOfZaps={numberOfZaps} setNumberOfZaps={setNumberOfZaps} />
+            <ZapPage numberOfZaps={numberOfZaps} />
+        </>
+
+
 
     )
 }
+
+
 
 

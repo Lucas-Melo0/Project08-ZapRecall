@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
-import reactDeck from "../data"
+import reactDeck from "../data";
 
-export default function Footer({ answers, answersIcon }) {
+
+export default function Footer({ answers, answersIcon, numberOfZaps}) {
 
     const wrongAnswersNumber = answersIcon.filter(value => value.iconClass === "incorrectAnswer")
     function isThereWrongAnswers() {
@@ -23,6 +24,7 @@ export default function Footer({ answers, answersIcon }) {
                         <img src="./assets/sad.png" alt="sad emoticon" /> <p>Putz...</p>
                     </div>
                     <p>Ainda faltam alguns...Mas não desanime!</p>
+                    <p>sua meta foi  {numberOfZaps} </p>
                 </div> : null
             }
             {

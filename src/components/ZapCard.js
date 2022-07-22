@@ -7,7 +7,6 @@ export default function ZapCard({ cardNumber, cardQuestion, cardAnswer, countAns
     const [zapClass, setZapClass] = React.useState("zapCard");
     const [zapIcon, setZapIcon] = React.useState("play-outline");
     
-
     function showAnswerResult(){
         setIsClicked(false);
         setIsTurned(false);
@@ -40,7 +39,7 @@ export default function ZapCard({ cardNumber, cardQuestion, cardAnswer, countAns
     return (
         <>
             {
-                isClicked ? null
+                isClicked && zapClass === "zapCard" ? null
                     : <div onClick={() => {setIsOpen(true); setIsClicked(true)}} className={zapClass}>
                         <div className="zapContainer">
                             <p>Pergunta {cardNumber} </p>
@@ -49,7 +48,7 @@ export default function ZapCard({ cardNumber, cardQuestion, cardAnswer, countAns
                     </div>
             }
             {
-                isOpen ? <div className="zapClicked">
+                isOpen && zapClass === "zapCard" ? <div className="zapClicked">
                     <p>{cardQuestion}</p>
                     <img onClick={() => {setIsTurned(true);setIsOpen(false)}} src="./assets/Vector.png" alt=" turnaround arrow" />
                 </div> : null
@@ -66,8 +65,6 @@ export default function ZapCard({ cardNumber, cardQuestion, cardAnswer, countAns
             }
 
         </>
-
-
     )
 }
 

@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
-import reactDeck from "../data";
+import {reactDeck} from "../data";
+import party from "../assets/party.png";
+import sad from "../assets/sad.png";
 
 
 export default function Footer({ answers, answersIcon, numberOfZaps}) {
@@ -25,7 +27,7 @@ export default function Footer({ answers, answersIcon, numberOfZaps}) {
             {
                 isThereWrongAnswers() ? <div className="finalResult">
                     <div className="resultMessage">
-                        <img src="./assets/sad.png" alt="sad emoticon" /> <p>Putz...</p>
+                        <img src={sad} alt="sad emoticon" /> <p>Putz...</p>
                     </div>
                     <p>Ainda faltam alguns...Mas não desanime!</p>
                     <p>Meta {amountOfZaps()}/{numberOfZaps} </p>
@@ -34,7 +36,7 @@ export default function Footer({ answers, answersIcon, numberOfZaps}) {
             {
                 isZeroWrongAnswers() ? <div className="finalResult">
                     <div className="resultMessage">
-                        <img src="./assets/party.png" alt="congratulations emoticon" /> <p>Parabéns!</p>
+                        <img src={party} alt="congratulations emoticon" /> <p>Parabéns!</p>
                     </div>
                     <p>Você não esqueceu de nenhum flashcard!</p>
                     <p>Meta {amountOfZaps()}/{numberOfZaps} </p>

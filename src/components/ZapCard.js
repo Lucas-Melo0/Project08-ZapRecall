@@ -1,4 +1,5 @@
 import React from "react";
+import arrow from "../assets/Vector.png";
 export default function ZapCard({ cardNumber, cardQuestion, cardAnswer, countAnswers, footerCorrectAnswerIcon, footerIncorrectAnswerIcon, footerHalfCorrectAnswerIcon}) {
 
     const [isClicked, setIsClicked] = React.useState(false);
@@ -50,7 +51,7 @@ export default function ZapCard({ cardNumber, cardQuestion, cardAnswer, countAns
             {
                 isOpen && zapClass === "zapCard" ? <div className="zapClicked">
                     <p>{cardQuestion}</p>
-                    <img onClick={() => {setIsTurned(true);setIsOpen(false)}} src="./assets/Vector.png" alt=" turnaround arrow" />
+                    <img onClick={() => {setIsTurned(true);setIsOpen(false)}} src={arrow} alt=" turnaround arrow" />
                 </div> : null
             }
             {

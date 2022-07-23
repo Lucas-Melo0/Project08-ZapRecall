@@ -24,6 +24,9 @@ const casimiroDeck = [
 reactDeck.sort(function () {
     return Math.round(Math.random()) - 0.5
 })
+casimiroDeck.sort(function () {
+    return Math.round(Math.random()) - 0.5
+})
 
-export default reactDeck
+export {reactDeck, casimiroDeck}
 

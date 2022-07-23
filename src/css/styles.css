@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
-
 @import url('https://fonts.googleapis.com/css2?family=Recursive:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500&display=swap');
+
 *{box-sizing: border-box;}
 *{text-decoration: none;}
 body {
@@ -44,9 +45,8 @@ ion-icon{
 }
 
 input {
-    all:unset
+    all:unset;
 }
-
 
 .homePage{
     margin-top: 100px;
@@ -68,7 +68,7 @@ input {
     color: #FFFFFF;
     font-family: 'Righteous', cursive;
 }
-.homePage button {
+.buttonClicked {
     margin-bottom: 40px;
     width: 246px;
     height: 54px;
@@ -83,6 +83,7 @@ input {
 .zaps{
     margin-bottom: 75px;
     min-height: 70vh;
+    height: 85vh;
     margin-top: 15px;
     display: flex;
     flex-direction: column;
@@ -126,8 +127,14 @@ input {
     margin-right: 10px;
 }
 .zapContainer{
-    all:inherit
+    all:inherit;
+    
 }
+.zapContainer:hover{
+    cursor: pointer;
+}
+    
+
 .hidden {
     display: none;
 }
@@ -212,6 +219,9 @@ input {
     font-size: 25px;
 }
 .dropdown {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
     margin-bottom: 20px;
     color: #ADADAD;
     background: #FFFFFF;
@@ -222,4 +232,15 @@ input {
 .container {
     display: flex;
     flex-direction: column;
+}
+.buttonNotClicked {
+    margin-bottom: 40px;
+    width: 246px;
+    height: 54px;
+    text-align: center;
+    background: #E8E8E8;
+    border: 1px solid #D70900;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+    color: #C0C0C0;
 }

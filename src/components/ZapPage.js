@@ -1,8 +1,9 @@
 import ZapCard from "./ZapCard"
 import Footer from "./Footer";
-import reactDeck from "../data";
+import {reactDeck, casimiroDeck} from "../data";
 import React from "react";
-export default function ZapPage({numberOfZaps}){
+import bolt from "../assets/bolt.png";
+export default function ZapPage({numberOfZaps, deck}){
     
     const [answers, setAnwsers] = React.useState(0);
     const [answersIcon, setAnwsersIcon] = React.useState([]);
@@ -19,15 +20,17 @@ export default function ZapPage({numberOfZaps}){
     function footerHalfCorrectAnswerIcon(){
         setAnwsersIcon([...answersIcon,{iconClass:"halfCorrectAnswer", iconName:"help-circle"}]); 
     }
-
+    function chosingDeck(){
+        return deck === "React Deck" ? reactDeck : casimiroDeck
+    }
     return (
         <div className="zapPage">
             <header>
-                <img src="./assets/logo.png" alt="Lightning bolt" />
+                <img src={bolt} alt="Lightning bolt" />
                 <h1>ZapRecall</h1>
             </header>
             <div className="zaps">
-                {reactDeck.map((value,index) => 
+                {chosingDeck().map((value,index) => 
                 <ZapCard  key ={index} countAnswers ={countAnswers} 
                 cardNumber ={index + 1}
                 cardQuestion = {value.question}
